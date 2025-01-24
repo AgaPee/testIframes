@@ -1546,6 +1546,17 @@
 					style="display: none; position: absolute; right: -10px; top: -10px; width: 23px; height: 23px;"
 				/></a
 			>
-		</div></body
+		</div>
+		<script type="text/javascript">
+			window.addEventListener("load", function () {
+				let message = {
+					height: document.body.scrollHeight,
+					width: document.body.scrollWidth,
+				};
+				// window.top refers to parent window
+				window.top.postMessage(message, "*");
+			});
+		</script>
+	</body
 	>
 </html>
