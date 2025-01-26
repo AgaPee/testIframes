@@ -466,5 +466,24 @@
 				</div>
 			</div>
 		</div>
+
+		<script type="text/javascript">
+			window.addEventListener("load", function () {
+				let message = {
+					height: document.body.scrollHeight,
+					width: document.body.scrollWidth,
+				};
+				// window.top refers to parent window
+				window.top.postMessage(message, "*");
+			});
+			window.addEventListener("resize", function () {
+				let message = {
+					height: document.body.scrollHeight,
+					width: document.body.scrollWidth,
+				};
+				// window.top refers to parent window
+				window.top.postMessage(message, "*");
+			});
+		</script>
 	</body>
 </html>

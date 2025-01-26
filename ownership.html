@@ -324,7 +324,7 @@
 			<div class="l-center-content container">
 				<div class="grid-row">
 					<div class="col-xs-12">
-						<div class="content-page-wrapper">
+						<div class="content-page-wrapper" style="max-width: none;">
 							<div class="content-page-content">
 								<div
 									class="rte-wrapper"
@@ -609,5 +609,24 @@
 
 		<script defer src="https://www.bossard.com/Scripts/export--aa70a0d0717eaed1dbcc.js"
 		></script>
+
+		<script type="text/javascript">
+			window.addEventListener("load", function () {
+				let message = {
+					height: document.body.scrollHeight,
+					width: document.body.scrollWidth,
+				};
+				// window.top refers to parent window
+				window.top.postMessage(message, "*");
+			});
+			window.addEventListener("resize", function () {
+				let message = {
+					height: document.body.scrollHeight,
+					width: document.body.scrollWidth,
+				};
+				// window.top refers to parent window
+				window.top.postMessage(message, "*");
+			});
+		</script>
 	</body>
 </html>
